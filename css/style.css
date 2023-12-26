@@ -1,8 +1,12 @@
-@charset "UTF-8";
-
-body {
-    background-color: #333;
+.navbar-brand img {
+    width: 50px;
 }
-h1 {
-    color: #fff;
+a{
+    color: aliceblue;
+}
+.rlink{
+    color: blue;
+}
+i{
+    color: #000;
 }

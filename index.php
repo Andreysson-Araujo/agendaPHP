@@ -1,28 +1,41 @@
 <?php
-include_once("config/url.php");
+    include_once("templates/header.php")
 ?>
-<!DOCTYPE html>
-<html lang="en">
+   <div class=container>
+    <?php if(isset($printMsg) && $printMsg != ""): ?>
+        <p id="msg"><?= $printMsg?></p>
+    <?php endif;?>
+    <h1 id="main-title">Minha Agenda</h1>
+    <?php if(count($contacts) > 0):?>
+        <table class="table" id="contacts-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome:</th>
+                    <th scope="col">Telefone:</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($contacts as $contact):?>
+                    <tr>
+                        <td scope="row"><?= $contact["id"] ?></td>
+                        <td scope="row"><?= $contact["name"] ?></td>
+                        <td scope="row"><?= $contact["phone"] ?></td>
+                        <td class="actions">
+                            <a href="#"><i class="fas fa-eye check-icon"></i></a>
+                            <a href="#"><i class="fas fa-edit check-icon"></i></a>
+                            <button type="submit"><i class="fas fa-times delete-icon"></i></button>
+                        </td>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda de Contatos</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
-        integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
-</head>
-
-<body>
-    <h1>Agenda</h1>
-    <i class="fas fa-eye"></i>
-</body>
-
-</html>
+                    </tr>
+                <?php endforeach;?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p id="empty-list-text">Ainda não ha contatos na sua agenda, <a class="rlink" href="<?=$BASE_URL ?>create.php">Clique aqui para adicionar</a>.</p>
+    <?php endif; ?>
+    </div>
+<?php
+    include_once("templates/footer.php");
+?>
