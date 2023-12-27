@@ -77,3 +77,34 @@ color: red;
     margin: 0 auto;
     margin-top: 1.875rem;
 }
+
+/*SHOW/ CONTATO iNDIVIDUAL */
+
+#view-contact-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bold {
+    /* CLASS HELP */
+    font-weight: bold;
+}
+
+#back-link-container{
+    display: block;
+    width: 500px;
+    margin: 1.875rem auto 0;
+}
+
+#back-link{
+    border:  1px solid #007bff;
+    color: #007bff;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#back-link:hover{
+   color: #FFF;
+   background-color: #007bff;
+   text-decoration: none;
+}
