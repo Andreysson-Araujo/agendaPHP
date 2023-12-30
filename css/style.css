@@ -108,3 +108,12 @@ color: red;
    background-color: #007bff;
    text-decoration: none;
 }
+
+/*CREATE*/
+#create-form,
+#edit-form {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
