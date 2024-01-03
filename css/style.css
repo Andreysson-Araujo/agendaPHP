@@ -116,6 +116,9 @@ color: red;
     margin: auto;
     text-align: center;
 }
+.delete-form{
+    display: inline-block;
+}
 
 /* MOBILE*/
 @media(max-width:480px) {
